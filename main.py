@@ -21,6 +21,8 @@ def professor():
     num = randint(0, 1)
     # Display the text
     game.show_long_text(preguntes[num], DialogLayout.CENTER)
+    mySprite.say_text("Choose an option and press B", 1000, False)
+    pause(1000)
     escollirOpcio()
 
 def on_countdown_end():

@@ -24,6 +24,8 @@ function professor () {
     num = randint(0, 1)
     // Display the text
     game.showLongText(preguntes[num], DialogLayout.Center)
+    mySprite.sayText("Choose an option and press B", 1000, false)
+    pause(1000)
     escollirOpcio()
 }
 info.onCountdownEnd(function () {
