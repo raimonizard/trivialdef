@@ -1,0 +1,47 @@
+{
+    "name": "trivialdef - Copy",
+    "description": "",
+    "dependencies": {
+        "device": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "images.g.jres",
+        "images.g.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.39",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj",
+    "palette": [
+        "#000000",
+        "#a8e4d4",
+        "#d13b27",
+        "#e07f8a",
+        "#cc8218",
+        "#b3e868",
+        "#5d853a",
+        "#68c127",
+        "#286fb8",
+        "#9b8bff",
+        "#3f2811",
+        "#513155",
+        "#122615",
+        "#c7b581",
+        "#7a2222",
+        "#000000"
+    ]
+}
