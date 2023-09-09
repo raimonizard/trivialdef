@@ -25,7 +25,7 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj",
+    "preferredEditor": "pyprj",
     "palette": [
         "#000000",
         "#a8e4d4",

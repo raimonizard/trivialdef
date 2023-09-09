@@ -2,96 +2,132 @@
 class SpriteKind:
     option = SpriteKind.create()
 def escollirOpcio():
+    global Respost
     controller.move_sprite(mySprite)
     animation.run_image_animation(mySprite, assets.animation("""
-        myAnim
+        myAnim0
     """), 500, True)
-    info.start_countdown(30)
+    info.start_countdown(20)
     if solucions[num] == resposta and Respost == 1:
-        info.stop_countdown()
         mySprite.say_text("CORRECT", 500, False)
         music.play(music.melody_playable(music.power_up),
             music.PlaybackMode.UNTIL_DONE)
+        info.change_score_by(1)
+        Respost = 0
+        info.start_countdown(20)
     elif solucions[num] != resposta and Respost == 1:
-        info.stop_countdown()
         info.change_life_by(-1)
+        Respost = 0
         mySprite.say_text("INCORRECT", 500, False)
+        info.start_countdown(20)
 def professor():
     global num
-    num = randint(0, 1)
-    # Display the text
-    game.show_long_text(preguntes[num], DialogLayout.CENTER)
-    mySprite.say_text("Choose an option and press B", 1000, False)
-    pause(1000)
-    escollirOpcio()
+    if info.life() > 0:
+        num = randint(0, 1)
+        # Display the text
+        game.show_long_text(preguntes[num], DialogLayout.CENTER)
+        mySprite.say_text("Choose an option and press B", 1000, False)
+        pause(1000)
+        escollirOpcio()
 
 def on_countdown_end():
     info.change_life_by(-1)
+    info.start_countdown(20)
     if info.life() > 0:
         professor()
 info.on_countdown_end(on_countdown_end)
 
+def initVars():
+    global Respost, A, B, C, D, mySprite
+    info.set_life(3)
+    info.set_score(0)
+    Respost = 0
+    A = sprites.create(assets.image("""
+        myImage6
+    """), SpriteKind.option)
+    A.set_position(25, 45)
+    B = sprites.create(assets.image("""
+        myImage3
+    """), SpriteKind.option)
+    B.set_position(50, 45)
+    C = sprites.create(assets.image("""
+        myImage5
+    """), SpriteKind.option)
+    C.set_position(75, 45)
+    D = sprites.create(assets.image("""
+        myImage8
+    """), SpriteKind.option)
+    D.set_position(100, 45)
+    mySprite = sprites.create(assets.image("""
+        myImage0
+    """), SpriteKind.player)
+    controller.move_sprite(mySprite)
+
 def on_on_overlap(sprite, otherSprite):
     global resposta, Respost
-    if otherSprite == A:
-        mySprite.say_text(respostes[num][0], 500, False)
-        if otherSprite == A and controller.B.is_pressed():
-            mySprite.say_text("Is that your choice...?")
-            resposta = 1
-            Respost = 1
-            escollirOpcio()
-            pause(1000)
-            professor()
-    elif otherSprite == B:
-        mySprite.say_text(respostes[num][1], 500, False)
-        if otherSprite == B and controller.B.is_pressed():
-            mySprite.say_text("Is that your choice...?")
-            resposta = 2
-            Respost = 1
-            escollirOpcio()
-            pause(1000)
-            professor()
-    elif otherSprite == C:
-        mySprite.say_text(respostes[num][2], 500, False)
-        if otherSprite == C and controller.B.is_pressed():
-            mySprite.say_text("Is that your choice...?")
-            resposta = 3
-            Respost = 1
-            escollirOpcio()
-            pause(1000)
-            professor()
-    elif otherSprite == D:
-        mySprite.say_text(respostes[num][3], 500, False)
-        if otherSprite == D and controller.B.is_pressed():
-            mySprite.say_text("Is that your choice...?")
-            resposta = 4
-            Respost = 1
-            escollirOpcio()
-            pause(1000)
-            professor()
+    if info.life() != 0:
+        if otherSprite == A:
+            mySprite.say_text(respostes[num][0], 500, False)
+            if otherSprite == A and controller.B.is_pressed():
+                mySprite.say_text("Is that your choice...?", 500, False)
+                resposta = 1
+                Respost = 1
+                escollirOpcio()
+                pause(1000)
+                professor()
+        elif otherSprite == B:
+            mySprite.say_text(respostes[num][1], 500, False)
+            if otherSprite == B and controller.B.is_pressed():
+                mySprite.say_text("Is that your choice...?")
+                resposta = 2
+                Respost = 1
+                escollirOpcio()
+                pause(1000)
+                professor()
+        elif otherSprite == C:
+            mySprite.say_text(respostes[num][2], 500, False)
+            if otherSprite == C and controller.B.is_pressed():
+                mySprite.say_text("Is that your choice...?")
+                resposta = 3
+                Respost = 1
+                escollirOpcio()
+                pause(1000)
+                professor()
+        elif otherSprite == D:
+            mySprite.say_text(respostes[num][3], 500, False)
+            if otherSprite == D and controller.B.is_pressed():
+                mySprite.say_text("Is that your choice...?")
+                resposta = 4
+                Respost = 1
+                escollirOpcio()
+                pause(1000)
+                professor()
 sprites.on_overlap(SpriteKind.player, SpriteKind.option, on_on_overlap)
 
 def on_life_zero():
     game.game_over(False)
 info.on_life_zero(on_life_zero)
 
-resposta = 0
-num = 0
-mySprite: Sprite = None
 D: Sprite = None
 C: Sprite = None
 B: Sprite = None
 A: Sprite = None
 Respost = 0
+resposta = 0
+num = 0
+mySprite: Sprite = None
 solucions: List[number] = []
 respostes: List[List[str]] = []
 preguntes: List[str] = []
+music.play(music.create_song(hex("""
+        0078000408020106001c00010a006400f401640000040000000000000000000000000000000002500000000400011d04000800011e08000c0001200c0010000122140018000220241c002000012520002400012024002800011e28002c00021d2030003400011d34003800011e38003c0001203c0040000125
+    """)),
+    music.PlaybackMode.LOOPING_IN_BACKGROUND)
 preguntes = ["What is the maximum length of a Python identifier?",
     "How is a code block indicated in Python?"]
 respostes = [["28", "32", "64", "None", "4"],
     ["28", "32", "64", "None", "4"]]
 solucions = [4, 4]
-info.set_life(3)
 game.splash("Be the best programmer!")
 scene.set_background_image(img("""
     5555555555555555555555555555555555555555555555555355555555555555555555555555555555555555553335555555555555555555555555555555555555555555555555555555555555555555
@@ -215,25 +251,5 @@ scene.set_background_image(img("""
         5555555555555555355555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
         5555555555555553555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
 """))
-Respost = 0
-A = sprites.create(assets.image("""
-    myImage6
-"""), SpriteKind.option)
-A.set_position(25, 45)
-B = sprites.create(assets.image("""
-    myImage3
-"""), SpriteKind.option)
-B.set_position(50, 45)
-C = sprites.create(assets.image("""
-    myImage5
-"""), SpriteKind.option)
-C.set_position(75, 45)
-D = sprites.create(assets.image("""
-    myImage8
-"""), SpriteKind.option)
-D.set_position(100, 45)
-mySprite = sprites.create(assets.image("""
-    myImage0
-"""), SpriteKind.player)
-controller.move_sprite(mySprite)
+initVars()
 professor()
