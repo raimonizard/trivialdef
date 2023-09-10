@@ -14,11 +14,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage8"
     },
-    "image8": {
-        "data": "hwQKABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzAwAAMAAAAwAAAAADAAADAAAAAAMAAAMAAAAAMAAAAwAAAAAAMzMzMwMAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "myImage6"
-    },
     "image5": {
         "data": "hwQKABAAAAAAAAAAAAAAAAAAAAAAAAAAADMzMzMzAwAAAwAwAAADAAADADAAAAMAAAMAMAAAAwAAMAADAzAAAAAAMwAwAwAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -28,6 +23,11 @@
         "data": "hwQKABAAAAAAAAAAAAAAAAAAMDMzAAAAAAADAAADAAAAMAAAADAAAAADAAAAMAAAAAMAAAAwAAAAAwAAADAAAAADAAAAMAAAAAMAAAAwAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage5"
+    },
+    "image8": {
+        "data": "hwQKABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzAwAAMAAAAwAAADADAAADAAAAAAMAAAMAAAAAMAAAAwAAAAAAMzMzMwMAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage6"
     },
     "anim2": {
         "namespace": "myAnimations",

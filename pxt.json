@@ -1,6 +1,5 @@
 {
-    "name": "programmerTrivial",
-    "version": "0.0.1",
+    "name": "programmerTrivial2",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -26,7 +25,7 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "pyprj",
+    "preferredEditor": "blocksprj",
     "palette": [
         "#000000",
         "#a8e4d4",
