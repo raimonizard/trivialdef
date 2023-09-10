@@ -87,6 +87,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
             escollirOpcio()
             if (preguntesList.length != 0) {
                 professor()
+            } else {
+                // Display the text
+                game.showLongText("End of the game, that's your score:" + info.score(), DialogLayout.Top)
+                game.reset()
             }
         }
     } else if (otherSprite == B) {
@@ -97,6 +101,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
             escollirOpcio()
             if (preguntesList.length != 0) {
                 professor()
+            } else {
+                // Display the text
+                game.showLongText("End of the game, that's your score:" + info.score(), DialogLayout.Top)
+                game.reset()
             }
         }
     } else if (otherSprite == C) {
@@ -107,6 +115,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
             escollirOpcio()
             if (preguntesList.length != 0) {
                 professor()
+            } else {
+                // Display the text
+                game.showLongText("End of the game, that's your score:" + info.score(), DialogLayout.Top)
+                game.reset()
             }
         }
     } else if (otherSprite == D) {
@@ -117,6 +129,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
             escollirOpcio()
             if (preguntesList.length != 0) {
                 professor()
+            } else {
+                // Display the text
+                game.showLongText("End of the game, that's your score:" + info.score(), DialogLayout.Top)
+                game.reset()
             }
         }
     }
