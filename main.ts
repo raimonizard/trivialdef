@@ -10,9 +10,9 @@ function escollirOpcio () {
     )
     controller.moveSprite(mySprite)
     info.startCountdown(20)
-    mySprite.sayText("Escull una opció i prem B per confirmar", 1000, false)
+    mySprite.sayText("Escull una opció i prem B per confirmar", 5000, false)
     if (solucions[randomNumber] == resposta && respost == 1) {
-        mySprite.sayText("ETS UN CRACK!", 500, false)
+        mySprite.sayText("ETS UN GENI!", 2000, false)
         animation.runImageAnimation(
         mySprite,
         assets.animation`myAnim2`,
@@ -26,7 +26,7 @@ function escollirOpcio () {
         respost = 0
         info.startCountdown(20)
     } else if (solucions[randomNumber] != resposta && respost == 1) {
-        mySprite.sayText("HAURÀS DE REPASSAR EL TEMARI...", 500, false)
+        mySprite.sayText("HAURÀS DE REPASSAR EL TEMARI...", 2000, false)
         animation.runImageAnimation(
         mySprite,
         assets.animation`myAnim1`,
@@ -104,13 +104,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Are you a genius programmer? :D You got " + info.score() + " points!", DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts", DialogLayout.Top)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Not bad! You got " + info.score() + " points!", DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts", DialogLayout.Top)
                 } else {
                     // Display the text
-                    game.showLongText("You can do it better! You got  " + info.score() + " points", DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
                 }
                 game.reset()
             }
@@ -127,13 +127,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Are you a genius programmer? :D You got " + info.score() + " points!" + assets.animation`myAnim2`, DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Not bad! You got " + info.score() + " points!" + assets.animation`myAnim3`, DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else {
                     // Display the text
-                    game.showLongText("You can do it better! You got  " + info.score() + " points" + assets.animation`myAnim1`, DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
                 }
                 game.reset()
             }
@@ -150,13 +150,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Are you a genius programmer? :D You got " + info.score() + " points!" + assets.animation`myAnim2`, DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Not bad! You got " + info.score() + " points!" + assets.animation`myAnim3`, DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else {
                     // Display the text
-                    game.showLongText("You can do it better! You got  " + info.score() + " points" + assets.animation`myAnim1`, DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
                 }
                 game.reset()
             }
@@ -173,13 +173,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Are you a genius programmer? :D You got " + info.score() + " points!" + assets.animation`myAnim2`, DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Not bad! You got " + info.score() + " points!" + assets.animation`myAnim3`, DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
                 } else {
                     // Display the text
-                    game.showLongText("You can do it better! You got  " + info.score() + " points" + assets.animation`myAnim1`, DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
                 }
                 game.reset()
             }
@@ -219,7 +219,9 @@ preguntes = [
 "En quin llenguatge està escrit Python?",
 "Quina de les següents és l'extensió correcta per un fitxer de Python?",
 "Qui va desenvolupar la versió Python 3.0?",
-"Com s'indica un bloc de codi a Python?"
+"Com s'indica un bloc de codi a Python?",
+"Quin serà el resultat del següent fragment de codi?  a = [1, 2, 3] a = tuple(a) a[0] = 2 print(a)",
+"Quin serà el resultat del següent fragment de codi?  print(type(5 / 2)) print(type(5 // 2))"
 ]
 respostes = [
 [
@@ -263,6 +265,18 @@ respostes = [
 "Claudàtors",
 "Identació",
 "Cap de les anteriors"
+],
+[
+"[2,2,3]",
+"(2,2,3)",
+"(1,2,3)",
+"Error"
+],
+[
+"float i int",
+"int i float",
+"float i float",
+"int i int"
 ]
 ]
 solucions = [
@@ -272,7 +286,9 @@ solucions = [
 2,
 0,
 0,
-2
+2,
+3,
+0
 ]
 explanation = [
 "La longitud màxima possible d'un identificador no està definida en el llenguatge Python. Pot ser de qualsevol nombre.",
@@ -281,9 +297,11 @@ explanation = [
 "Python està escrit en el llenguatge de programació C i també se'l coneix com a CPython.",
 "\".py\" és l'extensió correcta del fitxer de Python.",
 "La versió 3.0 de Python va ser desenvolupada el 3 de desembre de 2008.",
-"Un bloc de codi de Python s'indica mitjançant l'ús de la indentació."
+"Un bloc de codi de Python s'indica mitjançant l'ús de la indentació.",
+"Com que convertim \"a\" en una tupla i després intentem canviar-ne el contingut, obtindrem un error ja que les tuples són immutables.",
+"La primera expressió realitza una divisió estàndard, de manera que el resultat s'emmagatzema com a tipus float. La segona expressió realitza una divisió d'enters, de manera que el resultat s'emmagatzema com a tipus int."
 ]
-game.splash("Be the best programmer!")
+game.splash("Ets un/a crack de Python?")
 scene.setBackgroundImage(img`
     5555555555555555555555555555555555555555555555555355555555555555555555555555555555555555553335555555555555555555555555555555555555555555555555555555555555555555
     5555555555555555555555555555555555555555555555553555555555555555555555555555555555555555535553555555555555555555555555555555555555555555555555555555555555555555
