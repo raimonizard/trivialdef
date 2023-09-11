@@ -11,7 +11,6 @@ function escollirOpcio () {
     )
     controller.moveSprite(mySprite)
     info.startCountdown(20)
-    mySprite.sayText("Escull una opció i prem A per confirmar", 5000, false)
     if (solucions[randomNumber] == resposta && respost == 1) {
         mySprite.sayText("ETS UN GENI!", 2000, false)
         animation.runImageAnimation(
@@ -26,12 +25,12 @@ function escollirOpcio () {
         game.showLongText(explanation[randomNumber], DialogLayout.Bottom)
         respost = 0
         info.startCountdown(20)
-        mySprite.setPosition(127, 95)
+        mySprite.setPosition(112, 95)
     } else if (solucions[randomNumber] != resposta && respost == 1) {
         mySprite.sayText("HAURÀS DE REPASSAR EL TEMARI...", 2000, false)
         animation.runImageAnimation(
         mySprite,
-        assets.animation`myAnim1`,
+        assets.animation`myAnim4`,
         100,
         true
         )
@@ -41,7 +40,7 @@ function escollirOpcio () {
         game.showLongText(explanation[randomNumber], DialogLayout.Bottom)
         respost = 0
         info.startCountdown(20)
-        mySprite.setPosition(127, 95)
+        mySprite.setPosition(112, 95)
     }
 }
 function createList () {
@@ -91,9 +90,9 @@ function initVars () {
     D = sprites.create(assets.image`myImage8`, SpriteKind.option)
     D.setPosition(130, 57)
     mySprite = sprites.create(assets.image`myImage0`, SpriteKind.Player)
-    mySprite.setPosition(127, 95)
+    mySprite.setPosition(112, 95)
     Taula = sprites.create(assets.image`myImage7`, SpriteKind.moble)
-    Taula.setPosition(127, 105)
+    Taula.setPosition(112, 105)
     mySprite.setBounceOnWall(true)
     createList()
 }
@@ -110,13 +109,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts", DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts", DialogLayout.Center)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts", DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts", DialogLayout.Center)
                 } else {
                     // Display the text
-                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Center)
                 }
                 game.reset()
             }
@@ -133,13 +132,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else {
                     // Display the text
-                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Center)
                 }
                 game.reset()
             }
@@ -156,13 +155,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else {
                     // Display the text
-                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Center)
                 }
                 game.reset()
             }
@@ -179,13 +178,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 if (info.score() >= 9) {
                     game.setGameOverEffect(true, effects.confetti)
                     // Display the text
-                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
                     // Display the text
-                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Top)
+                    game.showLongText("Vas per bon camí! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else {
                     // Display the text
-                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Top)
+                    game.showLongText("Hauràs d'estudiar més!", DialogLayout.Center)
                 }
                 game.reset()
             }
@@ -433,4 +432,5 @@ scene.setBackgroundImage(img`
     5555555555555553555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
     `)
 initVars()
+mySprite.sayText("Escull una opció i prem A per confirmar", 2000, false)
 professor()
