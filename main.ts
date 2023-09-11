@@ -217,7 +217,7 @@ preguntes = [
 "Qui va desenvolupar el llenguatge Python?",
 "En quin any es va desenvolupar el llenguatge Python?",
 "En quin llenguatge està escrit Python?",
-"Quina de les següents és l'extensió correcta per un fitxer de Python?",
+"Quina de les següents és l'extensió correcta per a un fitxer de Python?",
 "Qui va desenvolupar la versió Python 3.0?",
 "Com s'indica un bloc de codi a Python?",
 "Quin serà el resultat del següent fragment de codi?  a = [1, 2, 3] a = tuple(a) a[0] = 2 print(a)",
