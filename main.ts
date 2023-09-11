@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const option = SpriteKind.create()
+    export const moble = SpriteKind.create()
 }
 function escollirOpcio () {
     animation.runImageAnimation(
@@ -10,7 +11,7 @@ function escollirOpcio () {
     )
     controller.moveSprite(mySprite)
     info.startCountdown(20)
-    mySprite.sayText("Escull una opció i prem B per confirmar", 5000, false)
+    mySprite.sayText("Escull una opció i prem A per confirmar", 5000, false)
     if (solucions[randomNumber] == resposta && respost == 1) {
         mySprite.sayText("ETS UN GENI!", 2000, false)
         animation.runImageAnimation(
@@ -25,6 +26,7 @@ function escollirOpcio () {
         game.showLongText(explanation[randomNumber], DialogLayout.Bottom)
         respost = 0
         info.startCountdown(20)
+        mySprite.setPosition(127, 95)
     } else if (solucions[randomNumber] != resposta && respost == 1) {
         mySprite.sayText("HAURÀS DE REPASSAR EL TEMARI...", 2000, false)
         animation.runImageAnimation(
@@ -39,6 +41,7 @@ function escollirOpcio () {
         game.showLongText(explanation[randomNumber], DialogLayout.Bottom)
         respost = 0
         info.startCountdown(20)
+        mySprite.setPosition(127, 95)
     }
 }
 function createList () {
@@ -80,21 +83,24 @@ function initVars () {
     info.setLife(3)
     info.setScore(0)
     A = sprites.create(assets.image`myImage6`, SpriteKind.option)
-    A.setPosition(30, 53)
+    A.setPosition(30, 57)
     B = sprites.create(assets.image`myImage3`, SpriteKind.option)
-    B.setPosition(65, 53)
+    B.setPosition(65, 57)
     C = sprites.create(assets.image`myImage5`, SpriteKind.option)
-    C.setPosition(100, 53)
+    C.setPosition(100, 57)
     D = sprites.create(assets.image`myImage8`, SpriteKind.option)
-    D.setPosition(130, 53)
+    D.setPosition(130, 57)
     mySprite = sprites.create(assets.image`myImage0`, SpriteKind.Player)
+    mySprite.setPosition(127, 95)
+    Taula = sprites.create(assets.image`myImage7`, SpriteKind.moble)
+    Taula.setPosition(127, 105)
     mySprite.setBounceOnWall(true)
     createList()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherSprite) {
     if (otherSprite == A) {
         mySprite.sayText(respostes[randomNumber][opcioA], 500, false)
-        if (otherSprite == A && controller.B.isPressed()) {
+        if (otherSprite == A && controller.A.isPressed()) {
             resposta = opcioA
             respost = 1
             escollirOpcio()
@@ -117,7 +123,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
         }
     } else if (otherSprite == B) {
         mySprite.sayText(respostes[randomNumber][opcioB], 500, false)
-        if (otherSprite == B && controller.B.isPressed()) {
+        if (otherSprite == B && controller.A.isPressed()) {
             resposta = opcioB
             respost = 1
             escollirOpcio()
@@ -140,7 +146,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
         }
     } else if (otherSprite == C) {
         mySprite.sayText(respostes[randomNumber][opcioC], 500, false)
-        if (otherSprite == C && controller.B.isPressed()) {
+        if (otherSprite == C && controller.A.isPressed()) {
             resposta = opcioC
             respost = 1
             escollirOpcio()
@@ -163,7 +169,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
         }
     } else if (otherSprite == D) {
         mySprite.sayText(respostes[randomNumber][opcioD], 500, false)
-        if (otherSprite == D && controller.B.isPressed()) {
+        if (otherSprite == D && controller.A.isPressed()) {
             resposta = opcioD
             respost = 1
             escollirOpcio()
@@ -189,9 +195,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
 info.onLifeZero(function () {
     preguntesList = []
     info.stopCountdown()
-    game.gameOver(false)
+    game.splash("GAME OVER")
     game.reset()
 })
+let Taula: Sprite = null
 let D: Sprite = null
 let C: Sprite = null
 let B: Sprite = null
@@ -211,6 +218,7 @@ let explanation: string[] = []
 let solucions: number[] = []
 let respostes: string[][] = []
 let preguntes: string[] = []
+music.play(music.createSong(hex`00780004080100`), music.PlaybackMode.UntilDone)
 music.play(music.createSong(hex`0078000408020106001c00010a006400f401640000040000000000000000000000000000000002500000000400011d04000800011e08000c0001200c0010000122140018000220241c002000012520002400012024002800011e28002c00021d2030003400011d34003800011e38003c0001203c0040000125`), music.PlaybackMode.LoopingInBackground)
 preguntes = [
 "Quina és la màxima longitud d'un identificador de Python?",
