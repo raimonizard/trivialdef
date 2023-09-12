@@ -1,7 +1,7 @@
  
 
 
-> Abra esta pagina en [https://fdezmaria.github.io/trivialdef---copy/](https://fdezmaria.github.io/trivialdef---copy/)
+> Abra esta pagina en [https://raimonizard.github.io/trivialdef/](https://raimonizard.github.io/trivialdef/)
 
 ## Usar como extensión
 
@@ -10,15 +10,15 @@ Este repositorio puede ser añadido como una **extensión** en MakeCode.
 * abra [https://arcade.makecode.com/](https://arcade.makecode.com/)
 * haga clic en **New Project**
 * haga clic en **Extensiones** en el menú del engranaje
-* buscar **https://github.com/fdezmaria/trivialdef---copy** e importar
+* buscar **https://raimonizard.github.io/trivialdef/** e importar
 
-## Edita este proyecto ![Build status badge](https://github.com/fdezmaria/trivialdef---copy/workflows/MakeCode/badge.svg)
+## Edita este proyecto
 
 Para editar este repositorio en MakeCode.
 
 * abra [https://arcade.makecode.com/](https://arcade.makecode.com/)
 * haga clic en **Import** luego haga clic en **Import URL**
-* pegue **https://github.com/fdezmaria/trivialdef---copy** y haga clic en importar
+* pegue **https://raimonizard.github.io/trivialdef/** y haga clic en importar
 
 ## Blocks preview
 
