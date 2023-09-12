@@ -107,7 +107,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 professor()
             } else {
                 if (info.score() >= 9) {
-                    game.setGameOverEffect(true, effects.confetti)
                     // Display the text
                     game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts", DialogLayout.Center)
                 } else if (info.score() >= 5) {
@@ -130,7 +129,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 professor()
             } else {
                 if (info.score() >= 9) {
-                    game.setGameOverEffect(true, effects.confetti)
                     // Display the text
                     game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
@@ -153,7 +151,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 professor()
             } else {
                 if (info.score() >= 9) {
-                    game.setGameOverEffect(true, effects.confetti)
                     // Display the text
                     game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
@@ -176,7 +173,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.option, function (sprite, otherS
                 professor()
             } else {
                 if (info.score() >= 9) {
-                    game.setGameOverEffect(true, effects.confetti)
                     // Display the text
                     game.showLongText("Ets un veritable geni! Has obtingut " + info.score() + " punts!", DialogLayout.Center)
                 } else if (info.score() >= 5) {
