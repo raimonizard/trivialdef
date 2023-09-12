@@ -304,7 +304,7 @@ explanation = [
 "Com que convertim \"a\" en una tupla i després intentem canviar-ne el contingut, obtindrem un error ja que les tuples són immutables.",
 "La primera expressió realitza una divisió estàndard, de manera que el resultat s'emmagatzema com a tipus float. La segona expressió realitza una divisió d'enters, de manera que el resultat s'emmagatzema com a tipus int."
 ]
-game.splash("Ets un/a crack de Python?")
+game.splash("Programa com un geni!")
 scene.setBackgroundImage(img`
     5555555555555555555555555555555555555555555555555355555555555555555555555555555555555555553335555555555555555555555555555555555555555555555555555555555555555555
     5555555555555555555555555555555555555555555555553555555555555555555555555555555555555555535553555555555555555555555555555555555555555555555555555555555555555555
