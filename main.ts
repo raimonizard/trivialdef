@@ -213,7 +213,7 @@ let explanation: string[] = []
 let solucions: number[] = []
 let respostes: string[][] = []
 let preguntes: string[] = []
-music.play(music.createSong(hex`00780004080100`), music.PlaybackMode.UntilDone)
+music.stopAllSounds()
 music.play(music.createSong(hex`0078000408020106001c00010a006400f401640000040000000000000000000000000000000002500000000400011d04000800011e08000c0001200c0010000122140018000220241c002000012520002400012024002800011e28002c00021d2030003400011d34003800011e38003c0001203c0040000125`), music.PlaybackMode.LoopingInBackground)
 preguntes = [
 "Quina és la màxima longitud d'un identificador de Python?",
